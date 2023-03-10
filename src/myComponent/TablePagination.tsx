@@ -111,7 +111,7 @@ class PokemonTable extends React.Component<any, any> {
                       onChange={event => this.search(event)}/>
                <br/>
            </div>
-            <table border={1}>
+            <table border={1} width={'100%'}>
                 <thead>
                 <tr>
                     <th>Name</th>

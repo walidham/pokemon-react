@@ -2,6 +2,7 @@ import React from "react";
 import TablePagination from "../myComponent/TablePagination";
 import logo from "../logo.svg";
 import PokemonTable from "../myComponent/TablePagination";
+import EnhancedTable from "../myComponent/TableMUIPagination";
 
 export class ListPokemons extends React.Component<any, any>{
 
@@ -12,7 +13,6 @@ export class ListPokemons extends React.Component<any, any>{
     render() {
         return <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
                 <PokemonTable />
             </header>
         </div>;

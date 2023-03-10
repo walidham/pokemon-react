@@ -12,6 +12,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "./pages/layout";
 import {ListPokemons} from "./pages/list-pokemons";
 import {PokemonDetail} from "./pages/pokemon-detail";
+import {MuiTable} from "./pages/list-pokemons-mui";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<ListPokemons />} />
+                    <Route path="list-mui" element={<MuiTable />} />
                     <Route path="pokemon/:name" element={<PokemonDetail />} />
                 </Route>
             </Routes>

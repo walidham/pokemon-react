@@ -7,6 +7,10 @@ const Layout = () => {
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
+
+                    </li>
+                    <li>
+                        <Link to="/list-mui">Mui Table</Link>
                     </li>
                 </ul>
             </nav>
