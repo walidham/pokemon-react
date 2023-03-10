@@ -4,11 +4,11 @@ export class PokemonDetail extends React.Component<any, any>{
 
     constructor(props:any) {
         super(props);
-        this.state={ name : this.props.params.name};
+        //this.state={ name : this.props.params.name};
        // alert(name);
     }
 
     render() {
-        return <h1>"Pokemon detail" {this.state.name}</h1>;
+        return <h1>"Pokemon detail"</h1>;
     }
 }

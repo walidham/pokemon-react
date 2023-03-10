@@ -36,10 +36,13 @@ class PokemonTable extends React.Component<any, any> {
                     this.setState(
                         {
                             data: data.results,
-                            currentData:data.results,
-                            totalPages: Math.ceil(data.results.length / this.state.rowsPerPage)
+                            currentData:data.results.slice(0, 20),
+                            totalPages: Math.ceil(data.results.length / this.state.rowsPerPage),
+                            currentPage: 1,
+                        },()=>{
+
                         });
-                        this.nextPage();
+                       // this.nextPage();
                 })
                 .catch((error) => console.error(error));
         })();
@@ -50,9 +53,8 @@ class PokemonTable extends React.Component<any, any> {
             const startIndex = (this.state.currentPage - 1) * this.state.rowsPerPage;
             const endIndex = startIndex + this.state.rowsPerPage;
             // this.getData();
-            const currentData = this.state.currentData.slice(startIndex, endIndex);
-            this.setState({currentData:currentData,
-                startIndex, endIndex});
+            const currentData = this.state.data.slice(startIndex, endIndex);
+            this.setState({currentData:currentData});
         });
 
     }
@@ -62,7 +64,7 @@ class PokemonTable extends React.Component<any, any> {
             const startIndex = (this.state.currentPage - 1) * this.state.rowsPerPage;
             const endIndex = startIndex + this.state.rowsPerPage;
             // this.getData();
-            const currentData = this.state.currentData.slice(startIndex, endIndex);
+            const currentData = this.state.data.slice(startIndex, endIndex);
             this.setState({currentData:currentData});
         });
     }
@@ -79,7 +81,7 @@ class PokemonTable extends React.Component<any, any> {
                     currentData:this.state.data,
                     totalPages: Math.ceil(this.state.data.length / this.state.rowsPerPage)
                 },()=>{
-                    this.nextPage();
+                    //this.nextPage();
                 })
 
             }
@@ -91,7 +93,7 @@ class PokemonTable extends React.Component<any, any> {
                 currentData:table,
                 totalPages: Math.ceil(table.length / this.state.rowsPerPage)
             },()=>{
-                this.nextPage();
+                //this.nextPage();
             })
 
 
